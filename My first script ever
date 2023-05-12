@@ -1,0 +1,14 @@
+if Quick == false then 
+game:GetService("StarterGui"):SetCore("ChatMakeSystemMessage", {
+            Text = "[ADMIN]: This will take long to load because of Quick = false (moblie loading)",
+            Color = Color3.new(0.011764, 0.701960, 1.0),
+            TextSize = 20,
+        })  task.wait(3)
+elseif Quick == true then
+game:GetService("StarterGui"):SetCore("ChatMakeSystemMessage", {
+            Text = "[ADMIN]: The gui will load ASAP Mobile dont support",
+            Color = Color3.new(0.011764, 0.701960, 1.0),
+            TextSize = 20,
+        })  wait(1)
+        
+end
