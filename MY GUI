@@ -1,0 +1,83 @@
+local ScreenGui = Instance.new("ScreenGui")
+local main = Instance.new("Frame")
+local obrof = Instance.new("TextButton")
+local pad = Instance.new("TextButton")
+local house = Instance.new("TextButton")
+local btools = Instance.new("TextButton")
+local TextLabel = Instance.new("TextLabel")
+local plr = game:GetService("Players").LocalPlayer
+local character = plr.Character or plr.CharacterAdded:Wait()
+local humanoid = character:FindFirstChild("Humanoid")
+ 
+--Properties:
+ 
+ScreenGui.Parent = game.CoreGui
+ 
+main.Name = "main"
+main.Parent = ScreenGui
+main.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+main.Position = UDim2.new(0.335372061, 0, 0.194484755, 0)
+main.Size = UDim2.new(0, 130, 0, 226)
+main.Active = true
+main.Draggable = true
+ 
+obrof.Name = "obrof"
+obrof.Parent = main
+obrof.BackgroundColor3 = Color3.fromRGB(71, 71, 71)
+obrof.Position = UDim2.new(0.156778798, 0, 0.61216718, 0)
+obrof.Size = UDim2.new(0, 88, 0, 34)
+obrof.Font = Enum.Font.SourceSans
+obrof.Text = "Reset Humanoid health "
+obrof.TextColor3 = Color3.fromRGB(255, 255, 255)
+obrof.TextSize = 14.000
+obrof.MouseButton1Down:Connect(function()
+	humanoid.Health = 0
+end)
+ 
+pad.Name = "pad"
+pad.Parent = main
+pad.BackgroundColor3 = Color3.fromRGB(71, 71, 71)
+pad.Position = UDim2.new(0.156778798, 0, 0.426993459, 0)
+pad.Size = UDim2.new(0, 88, 0, 34)
+pad.Font = Enum.Font.SourceSans
+pad.Text = "Destroy Humanoid"
+pad.TextColor3 = Color3.fromRGB(255, 255, 255)
+pad.TextSize = 14.000
+pad.MouseButton1Down:Connect(function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart:Destroy()
+end)
+ 
+house.Name = "house"
+house.Parent = main
+house.BackgroundColor3 = Color3.fromRGB(71, 71, 71)
+house.Position = UDim2.new(0.156778798, 0, 0.247391462, 0)
+house.Size = UDim2.new(0, 88, 0, 34)
+house.Font = Enum.Font.SourceSans
+house.Text = "Destroy Torso (alt reset)"
+house.TextColor3 = Color3.fromRGB(255, 255, 255)
+house.TextSize = 14.000
+house.MouseButton1Down:Connect(function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-3.48067, 27.7999, 95.3680)
+end)
+ 
+btools.Name = "btools"
+btools.Parent = main
+btools.BackgroundColor3 = Color3.fromRGB(71, 71, 71)
+btools.Position = UDim2.new(0.156778798, 0, 0.786080599, 0)
+btools.Size = UDim2.new(0, 88, 0, 34)
+btools.Font = Enum.Font.SourceSans
+btools.Text = "Destroy gui"
+btools.TextColor3 = Color3.fromRGB(255, 255, 255)
+btools.TextSize = 14.000
+btools.MouseButton1Down:Connect(function()
+ScreenGui:Destroy()
+end)
+ 
+TextLabel.Parent = main
+TextLabel.BackgroundColor3 = Color3.fromRGB(49, 49, 49)
+TextLabel.Position = UDim2.new(-0.00308948755, 0, -0.000430494547, 0)
+TextLabel.Size = UDim2.new(0, 130, 0, 50)
+TextLabel.Font = Enum.Font.SciFi
+TextLabel.Text = "Admin House Gui"
+TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.TextSize = 14.000
